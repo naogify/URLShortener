@@ -8,9 +8,8 @@ const serverlessConfiguration: AWS = {
   plugins: ["serverless-esbuild"],
   provider: {
     name: "aws",
-    runtime: "nodejs14.x",
-    profile: "serverlessUser",
-    region: "us-east-1",
+    runtime: "nodejs16.x",
+    region: "ap-northeast-1",
     iamRoleStatements: [
       {
         Effect: "Allow",
@@ -28,16 +27,7 @@ const serverlessConfiguration: AWS = {
       NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
 
       urlTable: "${self:custom.urlTableName}",
-      baseUrl: {
-        "Fn::Join": [
-          "",
-          [
-            "https://",
-            { Ref: "HttpApi" },
-            ".execute-api.${self:provider.region}.amazonaws.com",
-          ],
-        ],
-      },
+      baseUrl: "https://short.naoki-is.me",
     },
   },
   // import the function via paths
