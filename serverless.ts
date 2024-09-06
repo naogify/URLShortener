@@ -27,7 +27,7 @@ const serverlessConfiguration: AWS = {
       NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
 
       urlTable: "${self:custom.urlTableName}",
-      baseUrl: "https://short.naoki-is.me",
+      baseUrl: "https://s.naoki-is.me",
     },
   },
   // import the function via paths
